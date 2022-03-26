@@ -5,6 +5,9 @@ services:
     image: nginx:alpine
     restart: always
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+#      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./test.conf:/etc/nginx/nginx.conf:ro
+      - ./googleCert.pem:/etc/nginx/sslcerts/googleCert.pem:ro
     ports:
       - 8080:80
+      - 8001:8001
